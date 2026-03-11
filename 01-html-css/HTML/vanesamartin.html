@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Indica que el documento está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Comienza el documento HTML y le dice al navegador que el idioma es español -->
+
+<head>
+    <!-- En head van los datos de configuración de la página.
+         No es contenido que se vea directamente en la web -->
+
+    <meta charset="UTF-8">
+    <!-- Permite mostrar bien tildes, eñes y caracteres especiales -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que la página se adapte bien a móviles y tablets -->
+
+    <title>Mi artista favorita</title>
+    <!-- Este es el título que aparece en la pestaña del navegador -->
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Conecta este HTML con el archivo CSS externo llamado styles.css -->
+</head>
+
+<body>
+    <!-- Aquí empieza el contenido visible de la página -->
+
+    <div class="contenedor">
+        <!-- div = contenedor o caja.
+             Sirve para agrupar todo el contenido principal de la página.
+             class="contenedor" permite darle estilo desde el CSS -->
+
+        <h1 id="artista">Vanesa Martín</h1>
+        <!-- h1 = título principal de la página.
+             id="artista" sirve para darle un estilo único desde CSS -->
+
+        <img src="vanesa.jpg" alt="Foto de Vanesa Martín" class="imagen-artista">
+        <!-- img = imagen
+             src = nombre del archivo de imagen
+             alt = texto alternativo por si la imagen no carga
+             class = sirve para aplicar estilo desde CSS -->
+
+        <div class="seccion">
+            <!-- Nueva sección de contenido -->
+
+            <h2>Álbumes destacados</h2>
+            <!-- h2 = subtítulo -->
+
+            <ul>
+                <!-- ul = lista desordenada, o sea, con puntos -->
+
+                <li>Agua</li>
+                <!-- li = elemento de la lista -->
+
+                <li>Cuestión de piel</li>
+                <li>Crónica de un baile</li>
+                <li>Munay</li>
+                <li>Siete veces sí</li>
+            </ul>
+        </div>
+
+        <div class="seccion">
+            <!-- Otra sección -->
+
+            <h2>Top 5 canciones</h2>
+
+            <ol>
+                <!-- ol = lista ordenada, o sea, con números -->
+
+                <li>Complicidad</li>
+                <li>Inventas</li>
+                <li>Polvo de mariposas</li>
+                <li>De tus ojos</li>
+                <li>Si me olvidas</li>
+            </ol>
+        </div>
+
+        <div class="seccion">
+            <!-- Sección de información en forma de tabla -->
+
+            <h2>Información</h2>
+
+            <table>
+                <!-- table = tabla -->
+
+                <tr>
+                    <!-- tr = una fila de la tabla -->
+                    <th>Categoría</th>
+                    <th>Detalle</th>
+                    <!-- th = celda de encabezado -->
+                </tr>
+
+                <tr>
+                    <td>Años activa</td>
+                    <td>2006 - actualidad</td>
+                    <!-- td = celda normal de la tabla -->
+                </tr>
+
+                <tr>
+                    <td>Género</td>
+                    <td>Pop</td>
+                </tr>
+
+                <tr>
+                    <td>Lugar de nacimiento</td>
+                    <td>Málaga</td>
+                </tr>
+
+                <tr>
+                    <td>Profesión</td>
+                    <td>Cantante y compositora</td>
+                </tr>
+
+                <tr>
+                    <td>Premios</td>
+                    <td>Varios reconocimientos musicales</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="seccion">
+            <!-- Sección con enlace -->
+
+            <h2>Escúchala</h2>
+
+            <a href="https://www.youtube.com/channel/UCVOq4HJJ-ZuYCdlBZdKxFDA" target="_blank">YouTube</a>
+            <!-- a = enlace
+                 href = dirección a la que lleva
+                 target="_blank" = abre el enlace en otra pestaña -->
+        </div>
+
+        <div class="seccion">
+            <!-- Sección con opinión personal -->
+
+            <h2>Mi reseña</h2>
+
+            <p>
+                Vanesa Martín es mi artista favorita porque sus canciones me gustan mucho y sus letras transmiten sentimientos.
+            </p>
+            <!-- p = párrafo de texto -->
+        </div>
+
+    </div>
+
+</body>
+</html>

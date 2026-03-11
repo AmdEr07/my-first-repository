@@ -1,0 +1,62 @@
+body{
+font-family: Arial;
+background-color: #fffafc;
+}
+
+table{
+border-collapse: collapse;
+width: 85%;
+text-align: center;
+table-layout: fixed;
+}
+
+th, td{
+border: 1px solid #888;
+padding: 10px;
+}
+
+th{
+background-color: #ffc7d9;
+}
+
+/* colores pastel */
+
+.colegio {
+background-color: #fff4b5;
+}
+
+.desayunar{
+background-color: #c8f7c5;
+}
+
+.practica{
+background-color: #cfe8ff;
+}
+
+.comida{
+background-color: #ffd8c2;
+}
+
+.deporte{
+background-color: #d8c8ff;
+}
+
+.cafe{
+background-color: #f8c8dc;
+}
+
+.compra{
+background-color: #bdebd8;
+}
+
+.bootcamp{
+background-color: #d6eaff;
+}
+
+.comer{
+background-color: #fff4b5;
+}
+
+.casa{
+background-color: #d8c8ff;
+}

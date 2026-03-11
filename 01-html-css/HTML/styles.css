@@ -1,0 +1,107 @@
+/* body aplica estilos a toda la página */
+body {
+    background-color: #f5f5f5;
+    /* color de fondo de toda la web */
+
+    font-family: Arial, sans-serif;
+    /* tipo de letra de toda la página */
+}
+
+/* .contenedor es una clase
+   se aplica al div principal que contiene todo */
+.contenedor {
+    width: 800px;
+    /* ancho del contenedor */
+
+    margin: 0 auto;
+    /* 0 arriba y abajo
+       auto a izquierda y derecha
+       esto sirve para centrar el contenedor */
+
+    background-color: white;
+    /* color de fondo del contenedor */
+
+    padding: 20px;
+    /* espacio interior entre el borde y el contenido */
+}
+
+/* #artista es un id
+   se aplica al h1 principal */
+#artista {
+    color: darkblue;
+    /* color del título principal */
+
+    text-align: center;
+    /* centra el texto */
+}
+
+/* .imagen-artista es la clase de la imagen */
+.imagen-artista {
+    width: 100%;
+    /* la imagen ocupa todo el ancho disponible del contenedor */
+
+    border: 1px solid gray;
+    /* borde gris de 1 píxel */
+}
+
+/* .seccion se aplica a cada bloque de contenido */
+.seccion {
+    background-color: #eeeeee;
+    /* color de fondo de cada sección */
+
+    margin-top: 20px;
+    /* espacio por arriba de cada sección */
+
+    padding: 15px;
+    /* espacio interior dentro de la sección */
+
+    border: 1px solid #cccccc;
+    /* borde gris claro */
+}
+
+/* h2 afecta a todos los subtítulos */
+h2 {
+    color: darkred;
+    /* color de los subtítulos */
+}
+
+/* table afecta a la tabla completa */
+table {
+    width: 100%;
+    /* la tabla ocupa todo el ancho disponible */
+
+    border-collapse: collapse;
+    /* une los bordes de la tabla para que no se vean dobles */
+}
+
+/* th y td afectan a las celdas de la tabla
+   th = cabecera
+   td = celda normal */
+th, td {
+    border: 1px solid black;
+    /* borde negro en cada celda */
+
+    padding: 8px;
+    /* espacio interior en cada celda */
+}
+
+/* nth-child(even) selecciona las filas pares */
+tr:nth-child(even) {
+    background-color: #dddddd;
+    /* pone color gris claro a las filas pares */
+}
+
+/* a afecta a los enlaces */
+a {
+    color: blue;
+    /* color normal del enlace */
+
+    text-decoration: none;
+    /* quita el subrayado */
+}
+
+/* a:hover cambia el estilo cuando pasas el ratón por encima */
+a:hover {
+    color: red;
+    /* cuando pasas el ratón, el enlace se pone rojo */
+}

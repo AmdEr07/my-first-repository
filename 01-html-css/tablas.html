@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+  <table>
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Daniela</td>
+            <td>Suarez</td>
+        </tr>
+        <tr>
+            <td>Luca</td>
+            <td>Suarez</td>
+        </tr>
+        <tr>
+            <td  class="Leo">Leo</td>
+            <td>Suarez</td>
+        </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse:collapse ;
+        padding: 5px 20px;
+        
+    }
+
+        th { 
+            background-color: red;
+        }
+        th, td {
+            text-align:center
+        }
+        
+        .Leo {
+    background-color: rgb(201, 80, 201);
+    color: white;
+    font-weight: bold;
+
+}
+</style>
