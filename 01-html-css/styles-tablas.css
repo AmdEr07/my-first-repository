@@ -60,3 +60,7 @@ background-color: #fff4b5;
 .casa{
 background-color: #d8c8ff;
 }
+
+tr td:first-child {
+    background-color: #f2e2e9;
+}
