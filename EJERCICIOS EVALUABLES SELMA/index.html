@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y Tabla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Título principal -->
+<h2>Ejercicio Tabla y Formulario</h2>
+
+<!-- Contenedor que coloca tabla y formulario en fila -->
+<div class="contenedor">
+
+    <!-- ====== TABLA ====== -->
+    <table>
+
+        <!-- Fila de encabezados -->
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Fecha de nacimiento</th>
+            <th>Género</th>
+        </tr>
+
+        <!-- Fila 1 -->
+        <tr>
+            <td>Amanda</td>
+            <td>amanda_espinar@hotmail.com</td>
+            <td>1983-03-07</td>
+            <td>Femenino</td>
+        </tr>
+
+        <!-- Fila 2 -->
+        <tr>
+            <td>Victor Manuel</td>
+            <td>vm_suarez80@gmail.com</td>
+            <td>1980-03-17</td>
+            <td>Masculino</td>
+        </tr>
+
+        <!-- Fila 3 -->
+        <tr>
+            <td>Daniela</td>
+            <td>danielasuarez@gmail.com</td>
+            <td>2009-11-22</td>
+            <td>Femenino</td>
+        </tr>
+
+    </table>
+
+    <!-- ====== FORMULARIO ====== -->
+    <form action="enviado.html" method="get">
+
+        <!-- Campo nombre -->
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <!-- Campo email -->
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <!-- Campo fecha -->
+        <label>Fecha de nacimiento:</label>
+        <input type="date" name="fecha" required>
+
+        <!-- Selector de género -->
+        <label>Género:</label>
+        <select name="genero">
+            <option>Masculino</option>
+            <option>Femenino</option>
+            <option>Otro</option>
+        </select>
+
+        <!-- Botón enviar -->
+      <button type="submit">Enviar</button>
+    </form>
+
+</div>
+
+</body>
+
+<!-- EJERCICIOS EVALUABLE SELMA -->
+
+ <!-- “He usado flex para poner la tabla a la izquierda y el formulario a la derecha”
+👉 “He creado una tabla con <table>, <th> y <td>”
+👉 “He hecho un formulario con inputs de texto, email, fecha y un select”
+👉 “He usado CSS para colores, bordes y diseño” 
+👉 “He añadido action y method para simular el envío del formulario”
+👉 “He añadido comentarios para mejorar la legibilidad y entender mejor la estructura del código”-->

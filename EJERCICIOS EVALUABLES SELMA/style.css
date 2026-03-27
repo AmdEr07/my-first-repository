@@ -1,0 +1,76 @@
+/* ====== ESTILO GENERAL ====== */
+body {
+    font-family: Arial, sans-serif; /* tipo de letra */
+    background-color: #f5ebf1; /* color de fondo */
+}
+
+h2 {
+    text-align: center; /* centra el título */
+    color: #1e1a16; /* color del texto */
+}
+
+/* Contenedor para colocar tabla y formulario */
+.contenedor {
+    display: flex; /* pone elementos en fila */
+    gap: 40px; /* espacio entre tabla y form */
+    padding: 20px; /* espacio interior */
+    justify-content: center; /* centra todo */
+}
+
+/* ====== TABLA ====== */
+table {
+    border-collapse: collapse; /* une los bordes */
+    border-radius: 10px; /* esquinas redondeadas */
+    overflow: hidden; /* respeta el borde redondo */
+    background-color: #fffaf5; /* fondo claro */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* sombra suave */
+}
+
+table, th, td {
+    border: 1px solid #d6cfc7; /* borde de la tabla */
+    padding: 10px; /* espacio dentro de celdas */
+}
+
+th {
+    background-color: #f2a9ba; /* fondo encabezado */
+    color: #614453; /* color del texto */
+}
+
+td {
+    color: #1e1a16; /* color del contenido */
+}
+
+/* ====== FORMULARIO ====== */
+form {
+    display: flex; /* coloca elementos en columna */
+    flex-direction: column; /* dirección vertical */
+    gap: 10px; /* espacio entre campos */
+    background-color: #fffaf5; /* fondo del form */
+    padding: 20px; /* espacio interior */
+    border-radius: 10px; /* esquinas redondeadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* sombra */
+}
+
+label {
+    color: #5c4b3f; /* color de etiquetas */
+}
+
+input, select {
+    padding: 8px; /* espacio interno */
+    border: 1px solid #614453; /* borde */
+    border-radius: 5px; /* esquinas suaves */
+    background-color: #fdf8f3; /* fondo */
+}
+
+button {
+    background-color: #f2a9ba; /* color botón */
+    color: #000000; /* color texto */
+    border: none; /* sin borde */
+    padding: 10px; /* tamaño */
+    border-radius: 5px; /* redondeado */
+    cursor: pointer; /* cambia el cursor */
+}
+
+button:hover {
+    background-color: #e695aa; /* color al pasar el ratón */
+}

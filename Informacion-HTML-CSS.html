@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña del navegador -->
+  <title>Repaso fácil HTML y CSS</title>
+
+  <style>
+    /* =========================================================
+       1) ESTILOS GENERALES
+       ========================================================= */
+
+    /* body = todo el cuerpo visible de la página */
+    body {
+      font-family: Arial, sans-serif;   /* tipo de letra */
+      margin: 0;                        /* quita margen exterior por defecto */
+      background-color: #f4f4f4;        /* color de fondo general */
+      color: #222;                      /* color del texto */
+      line-height: 1.5;                 /* espacio entre líneas */
+    }
+
+    /* Clase contenedor: limita el ancho y centra el contenido */
+    .contenedor {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;                   /* centra horizontalmente */
+      padding: 20px;
+    }
+
+    /* Títulos */
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    /* Todas las secciones principales */
+    section {
+      background-color: white;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* =========================================================
+       2) ETIQUETAS SEMÁNTICAS
+       ========================================================= */
+
+    header {
+      background-color: #1f4e79;
+      color: white;
+      padding: 25px 20px;
+    }
+
+    nav {
+      background-color: #163a5a;
+      padding: 10px 20px;
+    }
+
+    /* nav a = todos los enlaces dentro de nav */
+    nav a {
+      color: white;
+      text-decoration: none;            /* quita subrayado */
+      margin-right: 15px;
+      font-weight: bold;
+    }
+
+    /* :hover = estilo cuando pasas el ratón */
+    nav a:hover {
+      color: #ffd966;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* =========================================================
+       3) SELECTORES CSS BÁSICOS
+       ========================================================= */
+
+    /* Selector por etiqueta */
+    p {
+      margin-bottom: 10px;
+    }
+
+    /* Selector por clase */
+    .destacado {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffcc00;
+      padding: 10px;
+    }
+
+    /* Selector por id */
+    #bloque-id {
+      border: 2px dashed #5b9bd5;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    /* Selector descendiente: afecta a los p dentro de .caja-padre */
+    .caja-padre p {
+      color: #7a1f1f;
+    }
+
+    /* Selector hijo directo: solo los div hijos directos */
+    .caja-padre > div {
+      margin-bottom: 10px;
+    }
+
+    /* =========================================================
+       4) BLOCK E INLINE
+       ========================================================= */
+
+    .ejemplo-block {
+      background-color: #d9ead3;
+      border: 1px solid #6aa84f;
+      margin-bottom: 10px;
+      padding: 10px;
+    }
+
+    .ejemplo-inline {
+      background-color: #cfe2f3;
+      border: 1px solid #3d85c6;
+      padding: 4px;
+    }
+
+    /* =========================================================
+       5) MODELO DE CAJA
+       ========================================================= */
+
+    .modelo-caja {
+      width: 250px;                     /* ancho del contenido */
+      padding: 20px;                    /* espacio interior */
+      border: 5px solid #e69138;        /* borde */
+      margin: 20px auto;                /* espacio exterior */
+      background-color: #fce5cd;
+      text-align: center;
+      box-sizing: border-box;           /* incluye padding y border dentro del width */
+    }
+
+    /* =========================================================
+       6) DISPLAY
+       ========================================================= */
+
+    .display-inline {
+      display: inline;                  /* ocupa solo lo necesario */
+      background-color: #ead1dc;
+      padding: 5px;
+      border: 1px solid #c27ba0;
+    }
+
+    .display-block {
+      display: block;                   /* ocupa todo el ancho */
+      background-color: #d9ead3;
+      padding: 10px;
+      border: 1px solid #6aa84f;
+      margin-bottom: 10px;
+    }
+
+    .display-inline-block {
+      display: inline-block;            /* como inline, pero acepta width/height */
+      width: 120px;
+      height: 60px;
+      background-color: #ffe599;
+      border: 1px solid #bf9000;
+      text-align: center;
+      line-height: 60px;
+      margin-right: 10px;
+    }
+
+    /* =========================================================
+       7) POSITION
+       ========================================================= */
+
+    .zona-position {
+      border: 2px solid #999;
+      padding: 20px;
+      min-height: 220px;
+      position: relative;               /* referencia para absolute */
+      background-color: #fafafa;
+    }
+
+    .caja-position {
+      width: 120px;
+      height: 70px;
+      color: white;
+      text-align: center;
+      line-height: 70px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .static {
+      position: static;                 /* posición normal */
+      background-color: steelblue;
+    }
+
+    .relative {
+      position: relative;               /* se mueve desde su sitio */
+      top: 10px;                        /* baja 10px */
+      left: 20px;                       /* se mueve 20px a la derecha */
+      background-color: tomato;
+    }
+
+    .absolute {
+      position: absolute;               /* sale del flujo normal */
+      top: 20px;                        /* distancia desde arriba del padre */
+      right: 20px;                      /* distancia desde la derecha del padre */
+      background-color: purple;
+    }
+
+    .fixed {
+      position: fixed;                  /* fijo en pantalla */
+      bottom: 15px;
+      right: 15px;
+      width: 140px;
+      height: 60px;
+      line-height: 60px;
+      background-color: orange;
+      color: black;
+      border: 2px solid black;
+      text-align: center;
+      font-weight: bold;
+      z-index: 1000;                    /* para que quede por encima */
+    }
+
+    .sticky {
+      position: sticky;                 /* se pega al hacer scroll */
+      top: 0;
+      background-color: yellow;
+      border: 1px solid #999;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    /* =========================================================
+       8) FLEXBOX
+       ========================================================= */
+
+    .contenedor-flex {
+      display: flex;                    /* activa flexbox */
+      justify-content: space-between;   /* reparte en horizontal */
+      align-items: center;              /* alinea en vertical */
+      gap: 10px;                        /* espacio entre elementos */
+      flex-wrap: wrap;                  /* si no caben, saltan */
+      border: 2px solid #6fa8dc;
+      padding: 10px;
+      background-color: #eef7ff;
+    }
+
+    .item-flex {
+      background-color: #3d85c6;
+      color: white;
+      padding: 20px;
+      min-width: 120px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* =========================================================
+       9) GRID
+       ========================================================= */
+
+    .contenedor-grid {
+      display: grid;                          /* activa grid */
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+      gap: 10px;
+      border: 2px solid #93c47d;
+      padding: 10px;
+      background-color: #f1fff0;
+    }
+
+    .item-grid {
+      background-color: #6aa84f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* =========================================================
+       10) TABLAS
+       ========================================================= */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;        /* une bordes */
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #d9ead3;
+    }
+
+    /* =========================================================
+       11) FORMULARIOS
+       ========================================================= */
+
+    form {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;                   /* cada label ocupa línea completa */
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    .grupo-radio,
+    .grupo-checkbox {
+      margin-top: 10px;
+    }
+
+    .grupo-radio label,
+    .grupo-checkbox label {
+      display: inline;                  /* aquí mejor en línea */
+      font-weight: normal;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #1f4e79;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #163a5a;
+    }
+
+    /* =========================================================
+       12) IMAGEN
+       ========================================================= */
+
+    .imagen-ejemplo {
+      max-width: 100%;
+      height: auto;
+      border: 3px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* =========================================================
+       13) RESPONSIVE
+       ========================================================= */
+
+    /* Cuando la pantalla sea pequeña */
+    @media (max-width: 700px) {
+      .contenedor-flex {
+        flex-direction: column;         /* en móvil se ponen en columna */
+      }
+
+      .contenedor-grid {
+        grid-template-columns: 1fr;     /* en móvil una sola columna */
+      }
+
+      nav a {
+        display: block;
+        margin-bottom: 8px;
+      }
+    }
+    footer {
+  background-color: #222;   /* fondo oscuro */
+  color: white;             /* texto blanco */
+  text-align: center;       /* centrado */
+  padding: 15px;            /* espacio interior */
+  margin-top: 20px;         /* separación arriba */
+}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER = cabecera -->
+  <header>
+    <div class="contenedor">
+      <h1>Repaso fácil de HTML y CSS</h1>
+      <p>Archivo de práctica para estudiar el temario completo.</p>
+    </div>
+  </header>
+
+  <!-- NAV = menú de navegación -->
+  <nav>
+    <div class="contenedor">
+      <a href="#html">HTML</a>
+      <a href="#css">CSS</a>
+      <a href="#position">Position</a>
+      <a href="#flex">Flexbox</a>
+      <a href="#grid">Grid</a>
+      <a href="#formularios">Formularios</a>
+    </div>
+  </nav>
+
+  <main class="contenedor">
+
+    <!-- ===================================================== -->
+    <!-- 1) HTML BÁSICO -->
+    <!-- ===================================================== -->
+    <section id="html">
+      <h2>1. HTML básico</h2>
+
+      <p>
+        HTML sirve para crear la estructura de la página:
+        títulos, párrafos, imágenes, enlaces, listas, tablas, formularios...
+      </p>
+
+      <div class="destacado">
+        <strong>Idea fácil:</strong> HTML dice <em>qué hay</em> en la web.
+      </div>
+
+      <h3>Ejemplo de texto</h3>
+      <p>Esto es un párrafo.</p>
+      <p>
+        Aquí hay un <span class="ejemplo-inline">span</span>,
+        que es una etiqueta inline y ocupa solo lo necesario.
+      </p>
+
+      <h3>Ejemplo de enlace</h3>
+      <p>
+        <a href="https://www.google.com" target="_blank">Ir a Google</a>
+      </p>
+
+      <h3>Ejemplo de imagen</h3>
+      <img
+        class="imagen-ejemplo"
+        src="https://picsum.photos/700/250"
+        alt="Imagen de ejemplo">
+
+      <h3>Ejemplo de listas</h3>
+      <p>Lista no ordenada:</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <p>Lista ordenada:</p>
+      <ol>
+        <li>Abrir VS Code</li>
+        <li>Crear archivo .html</li>
+        <li>Probar en el navegador</li>
+      </ol>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 2) ETIQUETAS SEMÁNTICAS -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>2. Etiquetas semánticas</h2>
+      <p>
+        Son etiquetas que explican mejor qué parte de la web es cada cosa:
+        <strong>header</strong>, <strong>nav</strong>, <strong>section</strong>,
+        <strong>footer</strong>...
+      </p>
+
+      <div id="bloque-id">
+        Este bloque tiene un <strong>id</strong>. Un id identifica un elemento concreto.
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 3) SELECTORES -->
+    <!-- ===================================================== -->
+    <section id="css">
+      <h2>3. Selectores CSS</h2>
+
+      <p>
+        CSS funciona así:
+        <strong>selector + propiedad + valor</strong>.
+      </p>
+
+      <div class="caja-padre">
+        <div>
+          <p>Este párrafo está dentro de .caja-padre y por eso cambia de color.</p>
+        </div>
+        <div>
+          <p>Este también.</p>
+        </div>
+      </div>
+
+      <div class="destacado">
+        <strong>Resumen:</strong><br>
+        etiqueta = selecciona por nombre<br>
+        .clase = selecciona por clase<br>
+        #id = selecciona por id
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 4) BLOCK / INLINE / INLINE-BLOCK -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>4. Block, Inline e Inline-block</h2>
+
+      <div class="display-block">Soy block: ocupo todo el ancho.</div>
+
+      <span class="display-inline">Soy inline</span>
+      <span class="display-inline">y voy en la misma línea</span>
+
+      <div style="margin-top: 15px;">
+        <div class="display-inline-block">Caja 1</div>
+        <div class="display-inline-block">Caja 2</div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 5) MODELO DE CAJA -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>5. Modelo de caja</h2>
+      <p>
+        Todo elemento en CSS es una caja:
+        contenido + padding + border + margin.
+      </p>
+
+      <div class="modelo-caja">
+        CONTENT<br>
+        + PADDING<br>
+        + BORDER<br>
+        + MARGIN
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 6) POSITION -->
+    <!-- ===================================================== -->
+    <section id="position">
+      <h2>6. Position</h2>
+      <p>
+        Sirve para colocar elementos.
+      </p>
+
+      <div class="sticky">
+        Soy STICKY: al hacer scroll, me pego arriba.
+      </div>
+
+      <div class="zona-position">
+        <!-- static = normal -->
+        <div class="caja-position static">STATIC</div>
+
+        <!-- relative = se mueve desde su sitio -->
+        <div class="caja-position relative">RELATIVE</div>
+
+        <!-- absolute = se coloca respecto al padre con position -->
+        <div class="caja-position absolute">ABSOLUTE</div>
+      </div>
+
+      <div class="destacado">
+        <strong>Idea fácil:</strong><br>
+        static = normal<br>
+        relative = se mueve pero deja hueco<br>
+        absolute = sale del flujo y usa al padre de referencia<br>
+        fixed = se queda pegado a la pantalla<br>
+        sticky = normal, pero al hacer scroll se pega
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 7) FLEXBOX -->
+    <!-- ===================================================== -->
+    <section id="flex">
+      <h2>7. Flexbox</h2>
+      <p>
+        Flexbox sirve para ordenar elementos en fila o columna de forma fácil.
+      </p>
+
+      <div class="contenedor-flex">
+        <div class="item-flex">Item 1</div>
+        <div class="item-flex">Item 2</div>
+        <div class="item-flex">Item 3</div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 8) GRID -->
+    <!-- ===================================================== -->
+    <section id="grid">
+      <h2>8. Grid</h2>
+      <p>
+        Grid sirve para crear filas y columnas.
+      </p>
+
+      <div class="contenedor-grid">
+        <div class="item-grid">1</div>
+        <div class="item-grid">2</div>
+        <div class="item-grid">3</div>
+        <div class="item-grid">4</div>
+        <div class="item-grid">5</div>
+        <div class="item-grid">6</div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 9) TABLAS -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>9. Tablas</h2>
+      <p>
+        Las tablas organizan datos en filas y columnas.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Curso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ana</td>
+            <td>25</td>
+            <td>HTML</td>
+          </tr>
+          <tr>
+            <td>Bea</td>
+            <td>32</td>
+            <td>CSS</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 10) FORMULARIOS -->
+    <!-- ===================================================== -->
+    <section id="formularios">
+      <h2>10. Formularios</h2>
+      <p>
+        Sirven para recoger datos del usuario.
+      </p>
+
+      <form action="resultado.html" method="get">
+        <!-- label = texto del campo -->
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Escribe tu contraseña">
+
+        <label for="pais">País</label>
+        <select id="pais" name="pais">
+          <option>España</option>
+          <option>Francia</option>
+          <option>Italia</option>
+        </select>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí"></textarea>
+
+        <div class="grupo-radio">
+          <p><strong>Sexo:</strong></p>
+          <input type="radio" id="hombre" name="sexo" value="hombre">
+          <label for="hombre">Hombre</label>
+
+          <input type="radio" id="mujer" name="sexo" value="mujer">
+          <label for="mujer">Mujer</label>
+        </div>
+
+        <div class="grupo-checkbox">
+          <p><strong>Intereses:</strong></p>
+          <input type="checkbox" id="html-check" name="interes1">
+          <label for="html-check">HTML</label>
+
+          <input type="checkbox" id="css-check" name="interes2">
+          <label for="css-check">CSS</label>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- 11) RESUMEN -->
+    <!-- ===================================================== -->
+    <section>
+      <h2>11. Resumen final fácil</h2>
+      <div class="destacado">
+        HTML = estructura<br>
+        CSS = estilo<br>
+        selector = a quién afecta<br>
+        propiedad = qué cambia<br>
+        valor = cómo cambia<br><br>
+
+        margin = espacio por fuera<br>
+        padding = espacio por dentro<br>
+        border = borde<br><br>
+
+        flex = ordenar fácil en una dirección<br>
+        grid = ordenar en filas y columnas<br>
+        responsive = adaptar a móvil<br>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FIXED = siempre visible en pantalla -->
+  <div class="fixed">FIXED</div>
+
+  <footer>
+    <p>Repaso de HTML y CSS para estudiar</p>
+  </footer>
+
+  <footer>
+  <p>© 2026 - Mi página de repaso HTML y CSS</p>
+</footer>
+
+</body>
+</html>

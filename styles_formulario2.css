@@ -1,0 +1,49 @@
+body{
+font-family: Arial, sans-serif;
+background-color:#dbeafe; /* azul pastel */
+}
+
+.formulario{
+width:350px;
+margin:auto;
+background-color:#f8fafc; /* blanco pastel */
+padding:20px;
+border-radius:10px;
+}
+
+h2{
+text-align:center;
+color:#4b5563;
+}
+
+h3{
+color:#6b7280;
+}
+
+input, select, textarea{
+width:100%;
+margin-top:5px;
+margin-bottom:10px;
+padding:6px;
+border:1px solid #cbd5e1;
+border-radius:5px;
+}
+
+button{
+margin-top:10px;
+padding:8px;
+border:none;
+border-radius:5px;
+color:white;
+cursor:pointer;
+}
+
+button[type="submit"]{
+background-color:#86efac; /* verde pastel */
+color:#065f46;
+}
+
+button[type="reset"]{
+background-color:#fda4af; /* rosa pastel */
+color:#7f1d1d;
+}

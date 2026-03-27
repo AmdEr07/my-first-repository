@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* Todos los div dentro de .padre */
+        .padre div {
+            height: 100px;              /* Alto de cada caja */
+            width: 100px;               /* Ancho de cada caja */
+            border: 1px solid red;      /* Borde rojo */
+            display: block;             /* Tipo bloque */
+        }
+
+        /* Contenedor principal */
+        .padre {
+            border: 2px solid black;    /* Borde del contenedor */
+            margin: 10px;               /* Espacio por fuera */
+            padding: 10px;              /* Espacio por dentro */
+        }
+
+        /* Div especial dentro de .padre */
+        .padre .dos {
+            margin: 5px;                /* Espacio exterior */
+            padding: 5px;               /* Espacio interior */
+            border: 5px solid green;    /* Borde verde */
+            height: 300px;              /* Más grande que los demás */
+            width: 300px;
+            display: block;
+        }
+
+        /* Hover SOLO en los div dentro de .dos */
+        .padre .dos div:hover {
+            background-color: blue;     /* Se ponen azules */
+        }
+
+        /* Hover en TODOS los div dentro de .padre */
+        .padre div:hover {
+            background-color: yellow;   /* Se ponen amarillos */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenedor padre -->
+    <div class="padre">
+
+        <!-- Div hijo especial (también es padre de otros div) -->
+        <div class="dos">
+
+            <!-- Div hijos dentro de .dos -->
+            <div>1</div>  <!-- Al pasar el ratón → azul -->
+            <div>2</div>  <!-- Al pasar el ratón → azul -->
+
+        </div>
+
+        <!-- Div normales dentro de .padre -->
+        <div>1</div>  <!-- Hover → amarillo -->
+        <div>2</div>  <!-- Hover → amarillo -->
+        <div>3</div>  <!-- Hover → amarillo -->
+        <div>4</div>  <!-- Hover → amarillo -->
+
+    </div>
+
+</body>
+</html>

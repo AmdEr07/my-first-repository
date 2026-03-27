@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        border: 1px dotted gray;
+        background-color: rgb(249, 246, 248);
+        max-width: 800px;
+        margin: 50px auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+    }
+    .item {
+        width: 180px;
+        height: 180px;
+        border: 1px solid black;
+        background-color: rgb(124, 95, 58);
+    }
+     .item-first {
+      order: 2;
+      background-color: rgb(163, 26, 26);
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item">Bloque A</div> 
+        <div class="item">Bloque B</div> 
+        <div class="item item-first">Bloque C</div>
+        <div class="item">Bloque D</div>
+        
+    </div>
+</body>
+</html>

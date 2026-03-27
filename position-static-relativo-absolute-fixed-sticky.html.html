@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Position visual PRO</title>
+
+<style>
+
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Bloques para separar cada ejemplo */
+.bloque {
+  border: 2px solid black;   /* Borde para ver cada sección */
+  margin-bottom: 50px;       /* Separación entre bloques */
+  padding: 20px;
+}
+
+/* Estilo base de todas las cajas */
+.caja {
+  width: 120px;              /* Ancho */
+  height: 80px;              /* Alto */
+  color: white;
+  text-align: center;
+  line-height: 80px;         /* Centrar texto vertical */
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* ===================== */
+/* 1) STATIC */
+/* ===================== */
+
+.static {
+  background: steelblue;
+  /* position: static es el valor por defecto */
+  /* NO responde a top, left, right o bottom */
+}
+
+/* ===================== */
+/* 2) RELATIVE */
+/* ===================== */
+
+.relative {
+  position: relative;  /* Se mueve desde su posición original */
+  top: 20px;           /* Baja 20px desde donde estaba */
+  left: 40px;          /* Se mueve 40px a la derecha */
+  background: tomato;
+
+  /* IMPORTANTE:
+     - Se mueve visualmente
+     - Pero sigue dejando su hueco original */
+}
+
+/* ===================== */
+/* 3) ABSOLUTE */
+/* ===================== */
+
+/* Padre de referencia */
+.padre {
+  position: relative;        /* Sirve de referencia al hijo absolute */
+  border: 3px dashed green;  /* Para ver el contenedor */
+  height: 200px;
+  margin-top: 20px;
+}
+
+/* Hijo absolute */
+.absolute {
+  position: absolute;  /* Sale del flujo normal */
+  top: 0;              /* Pegado arriba del padre */
+  right: 0;            /* Pegado a la derecha del padre */
+  background: purple;
+
+  /* IMPORTANTE:
+     - No deja hueco
+     - Se coloca respecto al padre con position: relative */
+}
+
+/* ===================== */
+/* 4) FIXED */
+/* ===================== */
+
+.fixed {
+  position: fixed;     /* Se coloca respecto a la pantalla */
+  bottom: 10px;        /* 10px desde abajo de la pantalla */
+  right: 10px;         /* 10px desde la derecha de la pantalla */
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+  background: orange;
+  color: black;
+  border: 2px solid black;
+
+  /* IMPORTANTE:
+     - Siempre está en la misma esquina
+     - Aunque hagas scroll no se mueve */
+}
+
+/* ===================== */
+/* 5) STICKY */
+/* ===================== */
+
+.sticky {
+  position: sticky;    /* Mezcla de relative + fixed */
+  top: 0;              /* Cuando llega arriba, se pega */
+  background: yellow;
+  padding: 10px;
+  font-weight: bold;
+
+  /* IMPORTANTE:
+     - Al principio está normal
+     - Cuando haces scroll se queda pegado arriba */
+}
+
+/* Zona para hacer scroll */
+.scroll {
+  height: 800px;       /* Para poder bajar y probar sticky/fixed */
+  background: lightgray;
+  margin-top: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>VISUAL POSITION 👀</h1>
+
+<!-- ===================== -->
+<!-- STATIC -->
+<!-- ===================== -->
+<div class="bloque">
+  <h2>STATIC</h2>
+  <p>No se mueve aunque pongas top, left, right o bottom.</p>
+
+  <!-- Caja con posición normal -->
+  <div class="caja static">1</div>
+  <div class="caja static">2</div>
+</div>
+
+<!-- ===================== -->
+<!-- RELATIVE -->
+<!-- ===================== -->
+<div class="bloque">
+  <h2>RELATIVE</h2>
+  <p>Se mueve pero deja su hueco.</p>
+
+  <!-- Caja normal -->
+  <div class="caja">NORMAL</div>
+
+  <!-- Esta caja se mueve, pero su espacio original sigue existiendo -->
+  <div class="caja relative">MOVE</div>
+
+  <!-- Otra caja normal para comparar -->
+  <div class="caja">NORMAL</div>
+</div>
+
+<!-- ===================== -->
+<!-- ABSOLUTE -->
+<!-- ===================== -->
+<div class="bloque">
+  <h2>ABSOLUTE</h2>
+  <p>Se coloca respecto al padre verde.</p>
+
+  <!-- Este div es el padre de referencia -->
+  <div class="padre">
+
+    <!-- Caja normal -->
+    <div class="caja">NORMAL</div>
+
+    <!-- Esta caja se coloca arriba a la derecha del padre -->
+    <div class="caja absolute">ABS</div>
+
+  </div>
+</div>
+
+<!-- ===================== -->
+<!-- STICKY -->
+<!-- ===================== -->
+<div class="bloque">
+  <h2>STICKY</h2>
+  <p>Baja con scroll y se pega arriba 👇</p>
+
+  <!-- Este elemento al principio está normal,
+       pero al hacer scroll se queda pegado arriba -->
+  <div class="sticky">SOY STICKY</div>
+
+  <!-- Espacio para poder hacer scroll -->
+  <div class="scroll"></div>
+</div>
+
+<!-- ===================== -->
+<!-- FIXED -->
+<!-- ===================== -->
+
+<!-- Esta caja SIEMPRE estará visible en la esquina inferior derecha
+     de la pantalla, aunque hagas scroll -->
+<div class="fixed">FIXED</div>
+
+</body>
+</html>

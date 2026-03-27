@@ -1,0 +1,28 @@
+   /* ----------------------------------------
+       CONTENEDOR DE LA GALERÍA
+       ---------------------------------------- */
+    .container {
+      display: flex; /* Activa flexbox */
+      flex-wrap: wrap; /* Permite que bajen a otra línea */
+      gap: 25px; /* Espacio entre imágenes */
+      justify-content: center; /* Centra las filas */
+      background-color: #cde4ed;
+    }
+    /* ----------------------------------------
+       CADA CUADRO DE IMAGEN
+       ---------------------------------------- */
+    .imagen {
+      width: 200px;
+      height: 200px; /* Tamaño fijo del cuadrado */
+      border: 2px solid #1e7ca1; /* Borde para ver el cuadro */
+      overflow: hidden; /* Oculta lo que se sale */
+    }
+    /* ----------------------------------------
+       IMAGEN DENTRO DEL CUADRO
+       ---------------------------------------- */
+    .imagen img {          
+      width: 100%; /* La imagen ocupa todo el ancho del cuadro */
+      height: 100%; /* La imagen ocupa todo el alto del cuadro */
+      object-fit: cover; /* Corta la imagen para llenar el cuadro sin deformar */
+      
+    } 
