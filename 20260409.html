@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+ 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Formularios + JS</title>
+  
+</head>
+
+<body>
+
+    <h1>Formularios + JS</h1>
+
+    <!-- Formulario -->
+    <!-- id: para usarlo en JavaScript -->
+    <!-- method="post": tipo de envío -->
+    <form id="my-form" method="post">
+
+        <!-- Campo de texto -->
+        <!-- id: identificador -->
+        <!-- type="text": campo de texto -->
+        <!-- name="username": clave para acceder desde JS -->
+        <!-- placeholder: texto de ayuda -->
+        <!-- autocomplete="off": desactiva sugerencias -->
+        <input 
+            id="username-input" 
+            type="text" 
+            name="username" 
+            placeholder="User name" 
+            autocomplete="off"
+        >
+
+        <!-- Botón de envío -->
+        <input type="submit" value="Send!">
+
+    </form>
+
+    <!-- Script de JavaScript -->
+    <script>
+
+        // Guardamos el formulario usando su id
+        const formEl = document.getElementById('my-form');
+
+        // Mostramos el formulario en consola
+        console.log(formEl);
+
+        // Escuchamos cuando se envía el formulario
+        formEl.addEventListener("submit", (e) => {
+
+            // Evita que la página se recargue
+            e.preventDefault();
+
+            // e.target es el formulario completo
+            let formValues = e.target;
+
+            // Mostramos el formulario
+            console.log("Form values:", formValues);
+
+            // Mostramos el tipo de dato
+            console.log(typeof formValues);
+
+            // Obtenemos el valor del input
+            console.log("Field value:", formValues.username.value);
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla con JavaScript</title>
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      background-color: rgb(231, 241, 238);
+      border-collapse: collapse;
+      padding: 5px 20px;
+    }
+
+    th {
+      background-color: rgb(244, 219, 234);
+    }
+  </style>
+</head>
+<body>
+
+  <h3>TABLA</h3>
+
+
+  <table id="tabla">
+
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+    </tr>
+
+    <tr>
+      <td>Eidy</td>
+      <td>Manzo</td>
+    </tr>
+
+    <tr>
+      <td>Rozilene</td>
+      <td>Amorin</td>
+    </tr>
+
+    <tr>
+      <td>Liliana</td>
+      <td>Santana</td>
+    </tr>
+
+  </table>
+
+  <script>
+
+    // declaro una variable y creo una nueva fila (tr) vacía
+    const nuevaFila = document.createElement("tr");
+
+    // declaro una variable y creo una celda (td) para el nombre
+    const nuevoNombre = document.createElement("td");
+
+    // le asigno el texto que quiero que tenga esa celda
+    nuevoNombre.textContent = "Amanda";
+
+    // declaro otra variable y creo otra celda para el apellido
+    const nuevoApellido = document.createElement("td");
+
+    // le asigno el texto del apellido
+    nuevoApellido.textContent = "Espinar";
+
+    // añado las dos celdas dentro de la fila
+    nuevaFila.append(nuevoNombre);
+    nuevaFila.append(nuevoApellido);
+
+    // declaro una variable y busco la tabla por su id
+    const tabla = document.getElementById("tabla");
+
+    /*// añado la nueva fila al final de la tabla
+    tabla.append(nuevaFila);
+
+    /*const nuevaFila2 = document.querySelector("tabla")
+    nuevaFila.remove("nuevaFila")*/
+
+    
+  </script>
+
+</body>
+</html>

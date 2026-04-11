@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 20px;
+        }
+
+        th {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    Tabla de usuarios - formulario + manipulación del DOM
+    He creado una tabla con usuarios iniciales y un formulario
+    para añadir nuevos usuarios.
+    -->
+
+    <table id="tabla">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+        <tr>
+            <td>Juan</td>
+            <td>Pérez</td>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>García</td>
+        </tr>
+        <tr>
+            <td>Pedro</td>
+            <td>López</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Formulario para añadir usuarios -->
+    <form id="formulario" method="post" action="">
+
+        <div class="form">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+        </div>
+
+        <br>
+
+        <div class="formulario">
+            <label for="apellido">Apellido</label><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+        </div>
+
+        <br>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+
+    // Cojo el formulario por su id
+    const formEl = document.getElementById('formulario');
+    console.log(formEl);
+
+    // Escucho cuando se envía el formulario
+    formEl.addEventListener("submit", (e) => {
+
+        // Evito que la página se recargue
+        e.preventDefault();
+
+        // Cojo los inputs
+        const nameEl = document.getElementById('nombre');
+        console.log(nameEl);
+
+        const apellidoEl = document.getElementById('apellido');
+        console.log(apellidoEl);
+
+        // Accedo al formulario completo
+        let formValues = e.target;
+        console.log("Form values: ", formValues);
+        console.log(typeof formValues);
+
+        // --------------------------------------------------
+        // 🔴 ERRORES QUE TENÍA:
+        // - Usaba SubmitEvent en vez del valor del input
+        // - No añadía bien los td al tr
+        // - No añadía la fila a la tabla
+        // --------------------------------------------------
+
+        // ✔️ SOLUCIÓN:
+
+        // Cojo lo que escribe el usuario (esto antes no lo hacía bien)
+        const nombre = nameEl.value;
+        const apellido = apellidoEl.value;
+
+        // Creo una nueva fila
+        const nuevaFila = document.createElement('tr');
+
+        // Creo las celdas
+        const tdNew = document.createElement('td');
+        const tdApellido = document.createElement('td');
+
+        // Meto el texto en las celdas (antes usaba SubmitEvent, mal)
+        tdNew.textContent = nombre;
+        tdApellido.textContent = apellido;
+
+        // Añado las celdas a la fila (antes hacía append vacío, no funcionaba)
+        nuevaFila.appendChild(tdNew);
+        nuevaFila.appendChild(tdApellido);
+
+        // Cojo la tabla
+        const tabla = document.getElementById('tabla');
+
+        // Añado la nueva fila al final de la tabla (esto faltaba)
+        tabla.appendChild(nuevaFila);
+
+        // Limpio los inputs
+        nameEl.value = "";
+        apellidoEl.value = "";
+
+    });
+
+</script>

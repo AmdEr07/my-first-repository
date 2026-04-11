@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba DOM</title>
+</head>
+<body>
+
+  <div id="caja" style="border:1px solid black; padding:10px;"></div>
+
+  <script>
+    let p = document.createElement("p");
+    p.textContent = "Soy un parrafo";
+
+    let caja = document.getElementById("caja");
+
+    caja.appendChild(p);
+  </script>
+
+</body>
+</html>

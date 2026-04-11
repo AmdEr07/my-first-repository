@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador</title>
+
+  <style>
+    #caja {
+      width: 150px;
+      height: 150px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="caja">0</div>
+
+  <script>
+let contador = 0;
+
+function aparecer() {
+  contador++;
+  let cajaEl = document.getElementById('caja');
+  cajaEl.textContent = contador;
+}
+
+let cajaEl = document.getElementById('caja');
+cajaEl.addEventListener('mouseenter', aparecer);
+
+  </script>
+
+</body>
+</html>

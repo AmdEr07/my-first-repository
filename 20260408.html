@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio div</title>
+
+  <style>
+    /* Estilo del div principal */
+    #divPrincipal {
+      border: 2px solid black;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Este es el div que ya existe -->
+  <div id="divPrincipal">Soy el div principal</div>
+
+  <script>
+
+    // 1. Busco el div que ya está en la página
+    let divPrincipal = document.getElementById("divPrincipal");
+
+    // 2. Creo un div nuevo desde JavaScript
+    let nuevoDiv = document.createElement("div");
+
+    // 3. Le pongo un texto al nuevo div
+    nuevoDiv.textContent = "Soy el nuevo div";
+
+    // 4. Le doy estilo (un borde de otro color)
+    nuevoDiv.style.border = "2px solid blue";
+
+    // 5. Meto el nuevo div dentro del div principal
+    divPrincipal.appendChild(nuevoDiv);
+
+  </script>
+
+</body>
+</html>

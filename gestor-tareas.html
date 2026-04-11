@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor básico de tareas</title>
+</head>
+<body>
+
+    <!-- Título principal de la página -->
+    <h1>Gestor básico de tareas</h1>
+
+    <!-- Aquí escribimos el título de la tarea -->
+    <label for="titulo">Título de la tarea:</label>
+    <input type="text" id="titulo" placeholder="Escribe una tarea">
+
+    <br><br>
+
+    <!-- Aquí elegimos la prioridad de la tarea -->
+    <label for="prioridad">Prioridad:</label>
+    <select id="prioridad">
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+    </select>
+
+    <br><br>
+
+    <!-- Botón para añadir una tarea -->
+    <button id="btnAñadir">Añadir tarea</button>
+
+    <!-- Botón para mostrar todas las tareas -->
+    <button id="btnMostrar">Mostrar todas</button>
+
+    <!-- Botón para mostrar solo las tareas con prioridad alta -->
+    <button id="btnAlta">Mostrar prioridad alta</button>
+
+    <hr>
+
+    <!-- Aquí se van a mostrar las tareas -->
+    <h2>Lista de tareas</h2>
+    <ul id="listaTareas"></ul>
+
+    <script>
+        // Creamos un array vacío para guardar las tareas
+        let tareas = [];
+
+        // Guardamos en variables los elementos del HTML que vamos a usar
+        const tituloInput = document.getElementById("titulo");
+        const prioridadSelect = document.getElementById("prioridad");
+        const btnAñadir = document.getElementById("btnAñadir");
+        const btnMostrar = document.getElementById("btnMostrar");
+        const btnAlta = document.getElementById("btnAlta");
+        const listaTareas = document.getElementById("listaTareas");
+
+        // -----------------------------------------
+        // FUNCIÓN PARA AÑADIR UNA TAREA
+        // -----------------------------------------
+        function añadirTarea() {
+
+            // Guardamos lo que escribe el usuario
+            let titulo = tituloInput.value;
+
+            // Guardamos la prioridad seleccionada
+            let prioridad = prioridadSelect.value;
+
+            // Comprobamos si el título está vacío
+            if (titulo.trim() === "") {
+                alert("Por favor, escribe una tarea");
+                return;
+            }
+
+            // Creamos un objeto con la información de la tarea
+            let nuevaTarea = {
+                titulo: titulo,
+                prioridad: prioridad
+            };
+
+            // Metemos la tarea en el array
+            tareas.push(nuevaTarea);
+
+            // Limpiamos el input después de añadir la tarea
+            tituloInput.value = "";
+
+            // Mostramos todas las tareas actualizadas
+            mostrarTareas();
+        }
+
+        // -----------------------------------------
+        // FUNCIÓN PARA MOSTRAR TODAS LAS TAREAS
+        // -----------------------------------------
+        function mostrarTareas() {
+
+            // Borramos la lista antes de volver a pintarla
+            listaTareas.innerHTML = "";
+
+            // Recorremos el array de tareas
+            for (let i = 0; i < tareas.length; i++) {
+
+                // Creamos un elemento <li> para cada tarea
+                let li = document.createElement("li");
+
+                // Escribimos dentro el título y la prioridad
+                li.textContent = tareas[i].titulo + " - Prioridad: " + tareas[i].prioridad;
+
+                // Añadimos el <li> a la lista del HTML
+                listaTareas.appendChild(li);
+            }
+        }
+
+        // -----------------------------------------
+        // FUNCIÓN PARA MOSTRAR SOLO LAS TAREAS
+        // DE PRIORIDAD ALTA
+        // -----------------------------------------
+        function mostrarTareasAlta() {
+
+            // Borramos la lista antes de volver a pintarla
+            listaTareas.innerHTML = "";
+
+            // Recorremos el array
+            for (let i = 0; i < tareas.length; i++) {
+
+                // Solo mostramos las tareas con prioridad alta
+                if (tareas[i].prioridad === "alta") {
+
+                    // Creamos un <li>
+                    let li = document.createElement("li");
+
+                    // Escribimos la información
+                    li.textContent = tareas[i].titulo + " - Prioridad: " + tareas[i].prioridad;
+
+                    // Lo añadimos a la lista
+                    listaTareas.appendChild(li);
+                }
+            }
+        }
+
+        // -----------------------------------------
+        // EVENTOS DE LOS BOTONES
+        // -----------------------------------------
+
+        // Cuando se pulsa el botón "Añadir tarea"
+        btnAñadir.addEventListener("click", añadirTarea);
+
+        // Cuando se pulsa el botón "Mostrar todas"
+        btnMostrar.addEventListener("click", mostrarTareas);
+
+        // Cuando se pulsa el botón "Mostrar prioridad alta"
+        btnAlta.addEventListener("click", mostrarTareasAlta);
+
+    </script>
+
+</body>
+</html>
