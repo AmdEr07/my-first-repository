@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    
+
+    <title>Validación Email</title>
+
+    <style>
+        /* Estilos del formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            margin: 50px auto;
+        }
+
+        /* Espacio entre elementos */
+        input {
+            margin-bottom: 5px;
+        }
+
+        /* 
+        Estilo del mensaje de error.
+        Lo oculto al principio con display:none
+        */
+        .error {
+            display: none; /* oculto por defecto */
+            color: red;
+            font-size: 12px;
+            background-color: #ffe6e6;
+            border: 1px solid red;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    He creado un formulario donde el usuario introduce un email.
+    Le pongo un id para poder acceder desde JavaScript.
+    -->
+    <form id="emailForm">
+
+        <!-- Texto para el usuario -->
+        <label>Email:</label>
+
+        <!-- 
+        Input donde el usuario escribe.
+        Uso name="email" para luego acceder con form.elements
+        -->
+        <input type="text" name="email">
+
+        <!-- 
+        Este <p> es el hueco donde se mostrará el mensaje de error.
+        Está justo debajo del input porque quiero que aparezca ahí.
+        -->
+        <p id="error-email" class="error"></p>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Enviar</button>
+
+    </form>
+
+    <script>
+
+        // Cojo el formulario para poder trabajar con él
+        const form = document.getElementById("emailForm");
+
+        // Cojo el elemento donde voy a mostrar el error
+        const errorEl = document.getElementById("error-email");
+
+        // Escucho cuando el usuario envía el formulario
+        form.addEventListener("submit", (e) => {
+
+            // Evito que la página se recargue
+            e.preventDefault();
+
+            // Cojo lo que ha escrito el usuario y elimino espacios
+            const email = form.elements.email.value.trim();
+
+            // Limpio el mensaje antes de validar
+            errorEl.textContent = "";
+            errorEl.style.display = "none";
+
+            // -------------------------
+            // VALIDACIONES
+            // -------------------------
+
+            // Si el campo está vacío
+            if (email === "") {
+
+                // Escribo el mensaje de error
+                errorEl.textContent = "El email es obligatorio";
+
+                // Muestro el mensaje
+                errorEl.style.display = "block";
+
+                return;
+            }
+
+            // Si no contiene @
+            if (!email.includes("@")) {
+
+                // Escribo el error
+                errorEl.textContent = "El email debe incluir @";
+
+                // Lo muestro
+                errorEl.style.display = "block";
+
+                return;
+            }
+
+            // Si todo está correcto
+            console.log("Todo correcto");
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+<!--He creado un formulario con un input para el email.
+He añadido un <p> debajo para mostrar mensajes de error.
+Uso JavaScript para detectar el envío con addEventListener.
+Con preventDefault() evito que la página se recargue.
+Obtengo el valor del input con form.elements y lo limpio con trim().
+Valido si está vacío o si no contiene @.
+Si hay error, lo muestro en el <p> usando textContent y display. -->

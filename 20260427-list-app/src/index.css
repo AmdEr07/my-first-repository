@@ -1,0 +1,134 @@
+/* =========================
+   ESTILOS GENERALES DE LA PÁGINA
+   ========================= */
+
+body {
+  font-family: Arial, sans-serif; 
+  /* 👆 Tipo de letra de toda la página */
+
+  background-color: #f3eead; 
+  /* 👆 Color de fondo gris clarito */
+}
+
+
+/* =========================
+   TÍTULO PRINCIPAL
+   ========================= */
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(58, 44, 44);
+
+  width: fit-content;      /* 👈 el borde se ajusta al texto */
+  margin: 20px auto;       /* 👈 centra el título */
+
+  padding: 8px 16px;       /* 👈 menos espacio = más compacto */
+
+  border: 3px solid;       /* 👈 borde más fino */
+  border-image: linear-gradient(to right, purple, pink) 1;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   TARJETAS DE CANCIONES
+   ========================= */
+
+.song-ticket {
+
+  color: black;
+
+  margin: 20px auto; 
+  /* 👆 
+     - 20px arriba y abajo
+     - auto a los lados = centra la tarjeta
+  */
+
+  background-color: rgb(243, 197, 218); 
+  /* 👆 Color de fondo rosa */
+
+  width: 400px; 
+  /* 👆 Ancho fijo → evita que ocupe toda la pantalla */
+
+  padding: 15px; 
+  /* 👆 Espacio interno (como margen por dentro) */
+
+  border-radius: 12px; 
+  /* 👆 Bordes redondeados */
+
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1); 
+  /* 👆 Sombra suave (da efecto de tarjeta) */
+
+  transition: transform 0.2s ease; 
+  /* 👆 Animación suave cuando cambie algo (hover) */
+}
+
+
+/* =========================
+   EFECTO AL PASAR EL RATÓN
+   ========================= */
+
+.song-ticket:hover {
+  transform: scale(1.02); 
+  /* 👆 Hace un pequeño zoom al pasar el ratón */
+}
+
+
+/* =========================
+   BOTONES
+   ========================= */
+
+button {
+
+  background-color: aquamarine; 
+  /* 👆 Color de fondo del botón */
+
+  color: rgb(96, 2, 248); 
+  /* 👆 Color del texto */
+
+  border: 3px solid #f3eead; 
+  /* 👆 Borde del botón */
+
+  border-radius: 15px; 
+  /* 👆 Bordes redondeados */
+
+  padding: 5px 10px; 
+  /* 👆 Espacio interno (alto y ancho del botón) */
+
+  cursor: pointer; 
+  /* 👆 Cambia el cursor a mano cuando pasas por encima */
+}
+
+
+/* =========================
+   EFECTO HOVER DEL BOTÓN
+   ========================= */
+
+button:hover {
+  background-color: rgb(0, 200, 200); 
+  /* 👆 Cambia el color al pasar el ratón */
+}
+
+
+/* =========================
+   ENLACES (LINKS)
+   ========================= */
+
+a {
+  color: rgb(96, 2, 248); 
+  /* 👆 Color del enlace */
+
+  text-decoration: none; 
+  /* 👆 Quita el subrayado */
+}
+
+
+/* =========================
+   EFECTO HOVER EN LINKS
+   ========================= */
+
+a:hover {
+  text-decoration: underline; 
+  /* 👆 Aparece subrayado al pasar el ratón */
+}

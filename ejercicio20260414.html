@@ -1,0 +1,175 @@
+<!--La tarea es escribir un fichero HTML que contenga un input de tipo number y dos botones uno con un mas y otro un menos  
+el campo del imput empezara con el numero 5 si le das al menos ira restando un numero al resultado del campo input y si le das al mas sumando 1
+bonus track si llega al 0 que el border se ponga rojo si el contador llega a 10 se ponga verde. Si vuelve dentro del rango entre 0 y 10, el color sea negro. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej_Esther_SumayResta</title>
+</head>
+
+<body>
+
+    <!-- 
+    Input de tipo number.
+    Empieza en 5 como indica el ejercicio.
+    Aquí se va mostrando el número que cambia al pulsar los botones.
+    -->
+    <input id="resultado" type="number" value="5">
+
+    <!-- Botón para sumar -->
+    <button id="suma">+</button>
+
+    <!-- Botón para restar -->
+    <button id="resta">-</button>
+
+</body>
+
+</html>
+
+<script>
+
+    // Llamo a los elementos del HTML usando su id
+    // resultadoEl → el input
+    // sumaEl → botón de sumar
+    // restaEl → botón de restar
+    const resultadoEl = document.getElementById("resultado"); 
+    const sumaEl = document.getElementById("suma");
+    const restaEl = document.getElementById("resta");
+
+
+    // -------------------------
+    // BOTÓN SUMAR
+    // -------------------------
+
+    // Capturo el click del botón +
+    sumaEl.addEventListener("click", () => {
+
+        // Cojo el valor del input, lo convierto a número y le sumo 1
+        resultadoEl.value = Number(resultadoEl.value) + 1;
+
+        // Llamo a la función para comprobar el color del borde
+        actualizarColor();
+
+    });
+
+
+    // -------------------------
+    // BOTÓN RESTAR
+    // -------------------------
+
+    // Capturo el click del botón -
+    restaEl.addEventListener("click", () => {
+
+        // Cojo el valor actual, lo convierto a número y le resto 1
+        resultadoEl.value = Number(resultadoEl.value) - 1;
+
+        // Vuelvo a comprobar el color
+        actualizarColor();
+
+    });
+
+
+    // -------------------------
+    // FUNCIÓN PARA CAMBIAR COLOR
+    // -------------------------
+
+    function actualizarColor() {
+
+        // Cojo el valor actual del input y lo convierto a número
+        const valor = Number(resultadoEl.value);
+
+        // Si el valor es menor que 0 → pongo el borde rojo
+        if (valor < 0) {
+
+            resultadoEl.style.border = "2px solid red";
+
+        }
+
+        // Si el valor es mayor que 10 → pongo el borde verde
+        else if (valor > 10) {
+
+            resultadoEl.style.border = "2px solid green";
+        }
+
+        // Si está entre 0 y 10 → borde negro
+        else {
+            resultadoEl.style.border = "2px solid black";
+        }
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

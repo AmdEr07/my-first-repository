@@ -1,0 +1,81 @@
+/* contenedor principal donde viven todas las fotos */
+
+.container {
+
+    /* pone las cajas en fila */
+    display: flex;
+
+    /* margen arriba/abajo = 50px
+       izquierda/derecha = auto (centra el contenedor) */
+    margin: 50px auto;
+
+    /* ancho total de la galería */
+    width: 875px;
+
+    /* permite que las fotos bajen a otra fila */
+    flex-wrap: wrap;
+
+    /* alinea las cajas al inicio */
+    justify-content: flex-start;
+
+    /* espacio vertical entre filas */
+    row-gap: 25px;
+
+    /* espacio horizontal entre columnas */
+    column-gap: 25px;
+
+    /* color de fondo del contenedor */
+    background-color: rgb(243, 188, 225);
+}
+
+
+
+/* cada caja individual de foto */
+
+.caja {
+
+    /* ancho de cada caja */
+    width: 200px;
+
+    /* alto de cada caja */
+    height: 200px;
+
+    /* color de fondo de la caja */
+    background-color: bisque;
+
+    /* sin borde */
+    border: 0;
+}
+
+
+
+/* imagen dentro de cada caja */
+
+.caja img {
+
+    /* la imagen ocupa todo el ancho */
+    width: 100%;
+
+    /* la imagen ocupa todo el alto */
+    height: 100%;
+
+    /* recorta la imagen sin deformarla */
+    object-fit: cover;
+
+    /* centra el recorte */
+    object-position: center;
+}
+
+
+
+/* fondo general de toda la página */
+
+body {
+
+    background-color: rgb(162, 235, 235);
+
+}
+
+.caja img:hover {
+  opacity: 50%;
+}

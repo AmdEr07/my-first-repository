@@ -1,0 +1,88 @@
+/* fondo oscuro que cubre toda la pantalla */
+.overlay {
+
+  /* fija el modal en toda la ventana */
+  position: fixed;
+
+  /* ocupa toda la pantalla:
+     top:0 right:0 bottom:0 left:0 */
+  inset: 0;
+
+  /* fondo negro semitransparente */
+  background: rgba(0, 0, 0, 0.5);
+
+  /* usamos flex */
+  display: flex;
+
+  /* centrado vertical */
+  align-items: center;
+
+  /* centrado horizontal */
+  justify-content: center;
+
+  /* capa por encima del contenido */
+  z-index: 999;
+}
+
+
+
+/* imagen del modal */
+.overlay img {
+
+  /* ancho máximo */
+  max-width: 80%;
+
+  /* alto máximo */
+  max-height: 80%;
+
+  /* evita deformar imagen */
+  object-fit: contain;
+
+}
+
+
+
+/* botón X */
+.close-btn {
+
+  /* posición absoluta */
+  position: absolute;
+
+  /* separación arriba */
+  top: 15px;
+
+  /* separación derecha */
+  right: 15px;
+
+  /* fondo blanco semitransparente */
+  background: rgba(255, 255, 255, 0.8);
+
+  /* sin borde */
+  border: none;
+
+  /* espacio interno */
+  padding: 8px 12px;
+
+  /* tamaño letra */
+  font-size: 20px;
+
+  /* cursor mano */
+  cursor: pointer;
+
+  /* bordes redondeados */
+  border-radius: 4px;
+
+  /* capa superior */
+  z-index: 1000;
+
+}
+
+
+
+/* efecto hover */
+
+.close-btn:hover {
+
+  /* fondo más blanco */
+  background: rgba(255, 255, 255, 1);
+}

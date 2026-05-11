@@ -1,0 +1,172 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+body {
+
+  /* Quitamos márgenes */
+  margin: 0;
+
+  /* Fondo oscuro */
+  background: #222;
+
+  /* Fuente del sistema */
+  font-family: system-ui;
+
+  /* Centramos el contenido */
+  display: grid;
+  place-content: center;
+
+  /* Altura completa */
+  min-height: 100vh;
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.App {
+
+  /* Flexbox */
+  display: flex;
+
+  /* Coloca las tarjetas en vertical */
+  flex-direction: column;
+
+  /* Espacio entre tarjetas */
+  gap: 8px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.tw-followCard {
+
+  /* Flexbox */
+  display: flex;
+
+  /* Centrado vertical */
+  align-items: center;
+
+  /* Separa izquierda y derecha */
+  justify-content: space-between;
+
+  /* Texto blanco */
+  color: white;
+
+  /* Tamaño letra */
+  font-size: .8rem;
+
+  /* Separación */
+  gap: 16px;
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+.tw-followCard-header {
+
+  display: flex;
+
+  align-items: center;
+
+  /* Separación avatar/texto */
+  gap: 4px;
+}
+
+
+/* =========================
+   INFO DEL USUARIO
+========================= */
+
+.tw-followCard-info {
+
+  display: flex;
+
+  /* Nombre arriba y usuario abajo */
+  flex-direction: column;
+}
+
+
+/* Usuario @ */
+.tw-followCard-infoUserName {
+
+  /* Transparencia */
+  opacity: .6;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.tw-followCard-avatar {
+
+  width: 48px;
+  height: 48px;
+
+  /* Hace la imagen redonda */
+  border-radius: 1000px;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.tw-followCard-button {
+
+  margin-left: 16px;
+
+  /* Sin borde */
+  border: 0;
+
+  /* Bordes redondos */
+  border-radius: 999px;
+
+  /* Espaciado interno */
+  padding: 6px 16px;
+
+  /* Negrita */
+  font-weight: bold;
+
+  /* Mano al pasar encima */
+  cursor: pointer;
+}
+
+
+/* Hover normal */
+.tw-followCard-button:hover {
+
+  background: #ddd;
+}
+
+
+/* =========================
+   BOTÓN SIGUIENDO
+========================= */
+
+.tw-followCard-button.is-following {
+
+  background: transparent;
+
+  color: white;
+
+  border: 1px solid #aaa;
+}
+
+
+/* Hover del botón siguiendo */
+.tw-followCard-button.is-following:hover {
+
+  color: red;
+
+  border: 1px solid red;
+
+  background: rgba(255, 0, 0, 0.15);
+}

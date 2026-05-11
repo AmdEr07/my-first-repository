@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos avanzados</title>
+
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 800px;
+      gap: 100px;
+      border: 1px solid black;
+      justify-content: center;
+      margin: 40px auto;
+      background-color: pink;
+    }
+
+    .item {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 80px 0px;
+      cursor: pointer;
+    }
+
+    #item-a {
+      background-color: #b1cff2; /* azul */
+    }
+
+    #item-b {
+      background-color: #9fe09e; /* verde */
+    }
+
+    #item-c {
+      background-color: #f2b1b1; /* rojo */
+    }
+
+    #item-d {
+      background-color: #f2e1b1; /* amarillo */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="item" id="item-a">A</div>
+    <div class="item" id="item-b">B</div>
+  </div>
+
+<Script>
+
+
+
+  // Selecciono el item azul y le añado un evento click que recibe el evento como parámetro (ev) y lo llamo stopPropagation para evitar que el evento suba al contenedor (bubbling) y muestro en consola que he hecho clic en el azul
+  document.querySelector("#item-a").addEventListener('click', (ev) => {
+
+    // Evito que el evento suba al contenedor (bubbling) y solo se ejecute el evento del item azul
+    ev.stopPropagation();
+
+    // Muestro en consola que he hecho clic en el azul
+    console.log('--> Azul');
+  });
+
+
+  // Selecciono el item verde y le añado un evento click
+  document.querySelector("#item-b").addEventListener('click', (ev) => {
+
+    // Evito que el evento también llegue al container
+    ev.stopPropagation();
+
+    // Muestro en consola que he hecho clic en el verde
+    console.log('--> Verde');
+  });
+
+
+  // Selecciono el contenedor (rosa)
+  document.querySelector('.container').addEventListener('click', (ev) => {
+
+    // Este solo se ejecuta si clico fuera de los items (en el fondo)
+    console.log('--> Rosa');
+  });
+
+
+</Script>
+
+</body>
+</html>

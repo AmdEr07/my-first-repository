@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarea botones</title>
+
+  <style>
+    /* Contenedor rosa */
+    .container {
+      width: 600px;
+      height: 200px;
+      background-color: rgb(243, 108, 187);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 50px auto;
+      border: 1px solid black;
+    }
+
+    /* Botones grises */
+    .btn {
+      width: 100px;
+      height: 50px;
+      background-color: gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Clase activo (verde) */
+    .activo {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="btn">Botón 1</div>
+    <div class="btn">Botón 2</div>
+    <div class="btn">Botón 3</div>
+  </div>
+
+  <script>
+
+    // selecciono el contenedor
+    const container = document.querySelector('.container');
+
+    // añado un único listener al contenedor (delegación de eventos)
+    container.addEventListener('click', (ev) => {
+
+      // selecciono todos los botones
+      const botones = document.querySelectorAll('.btn');
+
+      // si hago clic en un botón
+      if (ev.target.classList.contains('btn')) {
+
+        // primero pongo todos en gris (quito activo)
+        botones.forEach(btn => btn.classList.remove('activo'));
+
+        // pongo en verde el botón clicado
+        ev.target.classList.add('activo');
+      }
+
+      // si hago clic en el fondo (container)
+      else {
+
+        // pongo todos los botones en gris
+        botones.forEach(btn => btn.classList.remove('activo'));
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

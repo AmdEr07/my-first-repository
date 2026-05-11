@@ -1,0 +1,15 @@
+* {
+  background-color: #000000;
+  color: white;
+}
+
+.Saludo {
+  font-size: 60px;  
+  color: deeppink;
+}
+.texto {
+  font-size: 30px;
+  font-family: comic sans-serif;
+  font-style: bold;
+  color: #9a38f6;
+}

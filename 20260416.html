@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos avanzados</title>
+</head>
+<body>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+
+    <!-- Elementos hijos -->
+    <div class="item" id="item-a">
+      div with id: <code>item-a</code>
+    </div>
+
+    <div class="item" id="item-b">
+      div with id: <code>item-b</code>
+    </div>
+
+    <div class="item" id="item-c">
+      div with id: <code>item-c</code>
+    </div>
+
+    <div class="item" id="item-d">
+      div with id: <code>item-d</code>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    gap: 100px;
+    border: 1px solid black;
+    justify-content: center;
+    margin: 40px auto;
+    background-color: #fad7ef;
+  }
+
+  .item {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 0px;
+    text-align: center;
+  }
+
+  #item-a { background-color: #b1cff2; }
+  #item-b { background-color: #9fe09e; }
+  #item-c { background-color: #d78cab; }
+  #item-d { background-color: #d4e34f; }
+</style>
+
+<script>
+
+  // Evento click para cada item
+
+  document.querySelector('#item-a').addEventListener('click', (ev) => {
+    ev.stopPropagation(); // evito que el evento suba al contenedor
+    console.log('--> Azul');
+  });
+
+  document.querySelector('#item-b').addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    console.log('--> Verde');
+  });
+
+  document.querySelector('#item-c').addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    console.log('--> Rosa oscuro');
+  });
+
+  document.querySelector('#item-d').addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    console.log('--> Amarillo');
+  });
+
+
+  // Evento click del contenedor (padre)
+
+  document.querySelector('.container').addEventListener('click', (ev) => {
+
+    // muestro que se ha clicado el contenedor
+    console.log('Parent container clicked');
+
+    // obtengo los hijos del contenedor (HTMLCollection)
+    const children = document.querySelector('.container').children;
+
+    // convierto a array y obtengo los ids con map
+    const childrenIds = Array.from(children).map(el => el.id);
+
+    // muestro los ids de forma más estética en consola
+    console.log(childrenIds);
+
+  });
+
+</script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Permite usar caracteres como tildes -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Hace que se vea bien en móviles -->
+
+    <title>Validacion de formulario</title>
+</head>
+
+<body>
+
+    <!-- 
+    He creado un formulario donde el usuario introduce un número.
+    El id me sirve para poder acceder a él desde JavaScript.
+    -->
+
+    <form id="Validacion" method="post" autocomplete="off">
+
+        <!-- Texto para indicar al usuario qué debe hacer -->
+        <label>INTRODUCE UN NUMERO ENTRE 10 O 20</label>
+
+        <br><br>
+
+        <!-- 
+        Input donde el usuario escribe el número.
+        name="number" es importante porque luego lo uso con form.elements
+        -->
+        <input type="text" name="number" placeholder="write a number">
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+
+    // Cojo el formulario usando su id (para poder trabajar con él en JS)
+    const formEl = document.getElementById("Validacion");
+
+    // Escucho cuando el usuario envía el formulario
+    formEl.addEventListener("submit", (event) => {
+
+        // Evito que la página se recargue (muy importante para validar)
+        event.preventDefault();
+
+        // event.target es el formulario que se ha enviado
+        const form = event.target;
+
+        // Cojo el valor del input usando form.elements
+        // elements accede a los inputs por su name
+        // value es lo que ha escrito el usuario
+        const number = form.elements.number.value;
+
+        // -------------------------
+        // VALIDACIÓN 1
+        // -------------------------
+
+        // Compruebo si lo que ha escrito NO es un número
+        // isNaN significa "is Not a Number"
+        if (isNaN(number)) {
+
+            // Muestro error en consola
+            console.error("El valor introducido no es numérico");
+
+            // Paro el programa si hay error
+            return;
+        }
+
+        // -------------------------
+        // VALIDACIÓN 2
+        // -------------------------
+
+        // Compruebo si el número NO está entre 10 y 20
+        // && significa "y"
+        // ! Negacion, significa "no"
+        if (!(number > 10 && number < 20)) {
+
+            // Muestro error si está fuera del rango
+            console.error("El valor esta fuera del rango");
+
+        }
+
+        // Si todo está bien, muestro mensaje en consola
+        console.log("Todo lo que he hecho con las chicas esta ok");
+
+    });
+
+</script>
