@@ -1,0 +1,123 @@
+/* =========================
+   RESET GENERAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+
+  background-color: #afdbe9;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   TITULO
+========================= */
+
+h1 {
+  margin-bottom: 25px;
+
+  color: #333;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.controls {
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.controls button {
+  padding: 10px 16px;
+
+  font-size: 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #333;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* Hover de botones */
+
+.controls button:hover {
+  background-color: #555;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  border: 2px solid #333;
+}
+
+/* =========================
+   FILAS
+========================= */
+
+.row {
+  display: flex;
+}
+
+/* =========================
+   CELDAS
+========================= */
+
+.cell {
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #555;
+
+  background-color: white;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* Hover de celdas */
+
+.cell:hover {
+  background-color: #e8f3ff;
+}
+
+/* Celda seleccionada */
+
+.cell.selected {
+  background-color: #ea4dff;
+}
