@@ -4,7 +4,7 @@ import ThemeButton from './components/ThemeButton'; // Importamos el componente 
 
 function App() {
   return (
-    <> {/* Fragmento para agrupar elementos sin meter divs innecesarios */}
+    <> {/* Fragmento para agrupar elementos sin meter div innecesarios */}
       <Header /> {/* Montamos la cabecera (ella sola buscará su estilo) */}
       <MainContent /> {/* Montamos el contenido principal */}
       <div style={{ padding: '20px', textAlign: 'center' }}> {/* Contenedor centrado para el botón */}

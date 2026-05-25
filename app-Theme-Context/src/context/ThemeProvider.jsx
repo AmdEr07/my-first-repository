@@ -1,17 +1,17 @@
-import { useState } from 'react'; // Traemos el gancho para usar estados
-import { ThemeContext } from './ThemeContext'; // Importamos la señal que creamos al lado
+import { useState } from 'react'; // Traemos la función para usar estados de React
+import { ThemeContext } from './ThemeContext'; // Importamos el canal que creamos al lado
 
-export const ThemeProvider = ({ children }) => { // children son todos los componentes que irán dentro
-  const [theme, setTheme] = useState('light'); // Creamos el estado global del tema (empieza en claro)
+export const ThemeProvider = ({ children }) => { // Componente que envuelve a los demás para pasarles los datos
+  const [theme, setTheme] = useState('light'); // Variable de estado para el tema, por defecto empieza en claro
 
-  const toggleTheme = () => { // Función para alternar el interruptor del tema
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light')); // Si es light pasa a dark, y si no a light
+  const toggleTheme = () => { // Función para cambiar el tema como un interruptor
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light')); // Si está en claro pasa a oscuro, si no, a claro
   };
 
   return (
-    // Emitimos el valor actual (theme) y la función (toggleTheme) a través de la señal
+    // Compartimos la variable del tema y la función del interruptor con los componentes de dentro
     <ThemeContext.Provider value={{ theme, toggleTheme }}> 
-      {children} {/* Aquí dentro se pintarán App, Header, etc., recibiendo la señal */}
+      {children} {/* Aquí se pintan los componentes hijos que reciben la información */}
     </ThemeContext.Provider>
   );
 };

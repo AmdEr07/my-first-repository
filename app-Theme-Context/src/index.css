@@ -52,8 +52,10 @@ body {
 
 .btn-dark {
   background-color: #ffffff;
+  
   color: #1e1e1e;
   font-family: cursive;
+
 }
 
 /* Efecto al pasar el ratón por encima del botón */

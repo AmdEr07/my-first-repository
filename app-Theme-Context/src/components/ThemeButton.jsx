@@ -1,12 +1,12 @@
-import { useContext } from 'react'; // Conectamos al contexto global
-import { ThemeContext } from '../context/ThemeContext'; // Importamos la señal de la radio
+import { useContext } from 'react'; // Traemos la función para conectar componentes al contexto global
+import { ThemeContext } from '../context/ThemeContext'; // Importamos el canal del tema para poder leerlo
 
 function ThemeButton() {
-  // Extraemos el estado actual del tema y la función interruptor
+  // Sacamos el tema actual y la función del interruptor desde nuestro canal global
   const { theme, toggleTheme } = useContext(ThemeContext); 
 
   return (
-    // El botón alterna su diseño y su icono dependiendo del estado global
+    // Al hacer clic ejecutamos el interruptor y cambiamos el diseño usando las clases de index.css
     <button 
       onClick={toggleTheme} 
       className={`btn-theme ${theme === 'light' ? 'btn-light' : 'btn-dark'}`}
@@ -16,4 +16,4 @@ function ThemeButton() {
   );
 }
 
-export default ThemeButton; // Exportamos el botón personalizado
+export default ThemeButton; // Exportamos el botón para colocarlo en App.jsx

@@ -1,11 +1,12 @@
-import { useContext } from 'react'; // Conectamos al contexto global
-import { ThemeContext } from '../context/ThemeContext'; // Importamos la señal de la radio
+import { useContext } from 'react'; // Traemos la función para conectar componentes al contexto global
+import { ThemeContext } from '../context/ThemeContext'; // Importamos el canal del tema para poder leerlo
 
 function MainContent() {
-  const { theme } = useContext(ThemeContext); // Leemos el tema activo en este milisegundo
+  // Leemos el tema activo en este momento ('light' o 'dark')
+  const { theme } = useContext(ThemeContext); 
 
   return (
-    // Cambiamos el contenedor usando solo la clase del CSS
+    // Aplicamos los colores de fondo y texto del archivo index.css según el tema
     <main className={theme === 'light' ? 'content-light' : 'content-dark'}>
       <h2>¡Hola! Soy Programadora Web 🖥️</h2>
       <p>
@@ -23,4 +24,4 @@ function MainContent() {
   );
 }
 
-export default MainContent; // Exportamos el componente con tus textos nuevos
+export default MainContent; // Exportamos el contenido principal para usarlo en App.jsx
