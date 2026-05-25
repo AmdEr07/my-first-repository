@@ -1,0 +1,11 @@
+.main-nav {
+      display: flex;    /* Alinea los hijos en fila */
+      gap: 20px;        
+      padding: 10px;    
+    }
+
+    .main-nav a {
+      text-decoration: none; /* Quita el subrayado */
+      color: blue;           
+    }
+    
