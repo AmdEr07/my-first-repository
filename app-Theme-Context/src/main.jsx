@@ -7,7 +7,7 @@ import './index.css' // Estilos globales de la aplicación
 createRoot(document.getElementById('root')).render( // Enganchamos React al div 'root' del HTML
   <StrictMode>
     <ThemeProvider> {/* Envolvemos toda la app con el emisor del tema */}
-      <App /> {/* Nuestra aplicación ahora tiene superpoderes para leer el contexto */}
+      <App /> {/* La aplicación ahora tiene superpoderes para leer el contexto */}
     </ThemeProvider>
   </StrictMode>,
 )
