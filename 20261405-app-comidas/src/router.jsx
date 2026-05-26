@@ -5,10 +5,11 @@ import Card from "./pages/Card.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />, // Componente padre que contiene el menú <nav> y el <Outlet />
     children: [
       {
-        path: ":slug", // Dejamos solo :slug para que coincida exactamente con el useParams de Card.jsx
+        // Ruta dinámica variable (:slug) que coincide con el useParams de Card.jsx
+        path: ":slug", 
         element: <Card />
       }
     ]

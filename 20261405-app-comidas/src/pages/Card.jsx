@@ -2,29 +2,27 @@ import { useParams } from 'react-router-dom'
 import comidas from "../data/comidas.js"
 
 function Card() {
-  // Obtenemos el parámetro 'slug' de la URL
+  // Saco el nombre del plato de la barra de direcciones del navegador
   const { slug } = useParams()
 
-  // Busca dentro del array 'comidas' el primer elemento cuyo 'slug' coincida con el de la URL.
-  // La función find recorre el array y devuelve ese elemento; si no existe, devuelve undefined.
-  // Recibe un callback que se ejecuta para cada plato, y devuelve true para el plato que queremos encontrar.
-
-  // Buscamos la comida que coincida con ese slug
+  // Buscamos en el array el plato cuyo slug coincida con el de la navegación.
+  // .find() recorre el archivo de datos y extrae el primer objeto que cumpla la condición.
   const comidaEncontrada = comidas.find((comida) => comida.slug === slug)
 
-  // Validación de seguridad: si no existe la comida, mostramos un error
+  // Si alguien escribe una comida que no existe en la web, devuelvo este error
   if (!comidaEncontrada) {
     return <h2>404 - Comida no encontrada</h2>
   }
 
   return (
     <>
+      {/* Pinto en la pantalla los textos y la imagen local de la comida */}
       <h2>{comidaEncontrada.title}</h2>
       <p>{comidaEncontrada.info}</p>
       <img 
         src={comidaEncontrada.photo} 
         alt={comidaEncontrada.title} 
-        style={{ width: '300px' }} // Opcional: para que no se vea gigante
+        style={{ width: '300px' }} // Control de tamaño para que no se descuadre la foto
       />
     </>
   )

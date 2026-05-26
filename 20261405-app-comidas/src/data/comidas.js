@@ -1,10 +1,11 @@
+// Mi lista de platos con la info y la ruta de sus imágenes locales
 const comidas = [
   {
     id: 1,
     slug: 'pizza',
     title: 'Pizza',
     info: 'Exquisita pizza artesanal con masa crujiente, abundante queso mozzarella fundido, salsa de tomate natural y albahaca fresca.',
-    photo: "./public/pizza.jpg"
+    photo: "./public/pizza.jpg" // Archivo de la foto guardado en la carpeta public
   },
   {
     id: 2,

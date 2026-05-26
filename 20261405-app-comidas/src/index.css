@@ -1,34 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
+/* Estilos de la barra de navegación (diseño flexible y color de fondo) */
 nav {
   display: flex;
+  border-radius: 10px;
+  font-family: cursive;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #d44fac;
+  background-color: #68f5d6;
 }
+
+/* Formato para los enlaces del menú */
 nav a {
   color: rgb(3, 3, 3);
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
-  
-  
-  }
-   
+}
+
+/* Subrayado visual interactivo al pasar el ratón sobre los enlaces */
 nav a:hover {
   text-decoration: underline;
-}   
+}
 
+/* Centrado general de los títulos principales */
 h1 {
+  font-family: cursive;
   text-align: center;
   margin-top: 2rem;
 }
 
-/* Para el título "Hamburguesa" y "Comidas" */
+/* Reglas de diseño específicas para destacar los nombres de los platos */
 h1 {
-    text-align: center;
-    font-size: 3rem; /* Tamaño grande para destacar */
-    letter-spacing: -1px; /* Hace que se vea más moderno */
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: -1px; /* Junta un poquito las letras para que quede más moderno */
 }
 
+body {
+  background-color: #f3dcec; /* Color de fondo suave para toda la página */
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+
+img {
+  display: block;
+  margin: 20px auto; /* Centra la imagen horizontalmente */
+  max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados para un toque más suave */
+}
