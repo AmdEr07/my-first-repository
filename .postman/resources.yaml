@@ -1,0 +1,26 @@
+# Use this workspace to collaborate
+workspace:
+  id: 937e2e1b-5ecb-4d45-8586-8447158702a2
+
+localResources:
+  docs:
+    - ..\Proyecto-1-bootcamp\README.md
+    - ..\my-app-twitter\README.md
+    - ..\my-app-name\README.md
+    - ..\my-app-esther\README.md
+    - ..\my-app-Amanda\README.md
+    - ..\grid-app\README.md
+    - ..\boton-colores\README.md
+    - ..\cronometo-cocina\README.md
+    - ..\app-Theme-Context\README.md
+    - ..\20260427-list-app\README.md
+    - ..\app-selector-personajes\README.md
+    - ..\app-counter-sumar1\README.md
+    - ..\app-galeria-foto\README.md
+    - ..\20261405-app-comidas\README.md
+    - ..\20261305-app-museo\README.md
+    - ..\20260511-router\README.md
+    - ..\01-react-props\README.md
+    - ..\20260430-color-game\README.md
+    - ..\20260504-counter-app\README.md
+    - ..\readme.md

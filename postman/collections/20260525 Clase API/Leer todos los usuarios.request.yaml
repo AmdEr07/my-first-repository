@@ -1,0 +1,5 @@
+$kind: http-request
+name: Leer todos los usuarios
+url: https://6a14700a6c7db8aac05486a8.mockapi.io/api/Amanda
+method: GET
+order: 1779728165402

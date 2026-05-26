@@ -1,0 +1,5 @@
+$kind: http-request
+name: Movies List
+url: https://6a14700a6c7db8aac05486a8.mockapi.io/api/movies
+method: GET
+order: 1779733416188
