@@ -48,8 +48,6 @@ function Grid({
               }}
 
               /*
-                && significa "Y"
-
                 Si la fila coincide
                 Y la columna coincide,
                 añadimos la clase selected.
