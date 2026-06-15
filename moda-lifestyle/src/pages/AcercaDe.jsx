@@ -7,7 +7,7 @@
 import Navbar from "../components/Navbar";
 
 // Importamos la foto elegida para la sección personal.
-import fotoAmanda from "../assets/fotoProyecto.jpg";
+import fotoAmanda from "../assets/foto_proyecto.jpg";
 
 export default function AcercaDe() {
   // En esta página dejamos el idioma fijo en español porque es una presentación personal.

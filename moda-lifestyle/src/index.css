@@ -1856,7 +1856,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Navbar editorial con efecto limpio. */
+/* NAVBAR CON EFECTO LIMPIO. */
 .magazine-navbar {
   background: rgba(247, 246, 242, 0.94) !important;
   backdrop-filter: blur(10px);
@@ -1911,7 +1911,7 @@ body {
   color: #ffffff !important;
 }
 
-/* Nueva portada principal. */
+/* NUEVA PORTADA PRINCIPAL. */
 .portada-salvia {
   max-width: 1180px;
   margin: 55px auto 35px auto;
@@ -1984,7 +1984,7 @@ body {
   background-position: center;
 }
 
-/* Accesos a categorías. */
+/* ACCESOS A CATEGORIAS. */
 .categorias-salvia {
   max-width: 1180px;
   margin: 20px auto 35px auto;
