@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 // Importamos la foto elegida para la sección personal.
 import fotoAmanda from "../assets/fotoProyecto.jpg";
 
-export default function AcercaDe({ usuarioConectado, setUsuarioConectado }) {
+export default function AcercaDe() {
   // En esta página dejamos el idioma fijo en español porque es una presentación personal.
   // Si más adelante quieres traducirla, se podría crear un estado de idioma como en Home.
   const idioma = "es";
@@ -22,8 +22,7 @@ export default function AcercaDe({ usuarioConectado, setUsuarioConectado }) {
         idioma={idioma}
         setIdioma={setIdioma}
         categoriaActiva="SOBRE"
-        usuarioConectado={usuarioConectado}
-        setUsuarioConectado={setUsuarioConectado}
+
       />
 
       <main className="acerca-page">

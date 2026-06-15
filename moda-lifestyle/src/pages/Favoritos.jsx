@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import ArticleCard from "../components/ArticleCard";
 import { servicioBlog } from "../services/api";
 
-export default function Favoritos({ usuarioConectado, setUsuarioConectado }) {
+export default function Favoritos() {
   // Estado para el idioma del navbar.
   const [idioma, setIdioma] = useState("es");
 
@@ -49,8 +49,7 @@ export default function Favoritos({ usuarioConectado, setUsuarioConectado }) {
         idioma={idioma}
         setIdioma={setIdioma}
         categoriaActiva=""
-        usuarioConectado={usuarioConectado}
-        setUsuarioConectado={setUsuarioConectado}
+
       />
 
       <main className="favoritos-page">

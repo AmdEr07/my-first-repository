@@ -7,8 +7,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { servicioBlog } from "../services/api";
+import { useAuth } from "../context/AuthContext";
 
-export default function Admin({ usuarioConectado }) {
+export default function Admin() {
+  // Sacamos del contexto si el administrador está conectado.
+  const { usuarioConectado } = useAuth();
+
   // Estados del formulario.
   const [titulo, setTitulo] = useState("");
   const [contenido, setContenido] = useState("");

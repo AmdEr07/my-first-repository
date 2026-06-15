@@ -10,13 +10,17 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaGlobeEurope } from "react-icons/fa";
 
+// Importamos el contexto de autenticación para saber si hay sesión iniciada.
+import { useAuth } from "../context/AuthContext";
+
 export default function Navbar({
   idioma,
   setIdioma,
   categoriaActiva,
-  usuarioConectado,
-  setUsuarioConectado,
 }) {
+  // Sacamos del contexto si el administrador está conectado y la función para cerrar sesión.
+  const { usuarioConectado, cerrarSesion: cerrarSesionContexto } = useAuth();
+
   // Hook(Gancho) para movernos a otra ruta desde JavaScript.
   const navegar = useNavigate();
 
@@ -85,14 +89,13 @@ export default function Navbar({
     { id: "TENDENCIAS", label: textos.navModa, ruta: "/categoria/tendencias" },
     { id: "BELLEZA", label: textos.navBelleza, ruta: "/categoria/belleza" },
     { id: "ESTILO", label: textos.navEstilo, ruta: "/categoria/estilo" },
-    { id: "VIVIENDO", label: textos.navViviendo, ruta: "/categoria/viviendo" },
+    { id: "VIVIENDO", label: textos.navLiving, ruta: "/categoria/viviendo" },
   ];
 
   // Función para cerrar sesión.
-  // Borra la api_key de localStorage y actualiza el estado general de App.
+  // Ahora usa el contexto global para borrar la api_key y actualizar la sesión.
   const cerrarSesion = () => {
-    localStorage.removeArticulo("api_key");
-    setUsuarioConectado(false);
+    cerrarSesionContexto();
     navegar("/");
   };
 
@@ -102,7 +105,7 @@ export default function Navbar({
     evento.preventDefault();
 
     // Comprobamos que los campos tengan información útil.
-    if (!nombreSuscriptor.trim() || !emailSuscriptor.incluye("@")) {
+    if (!nombreSuscriptor.trim() || !emailSuscriptor.includes("@")) {
       setMensajeSuscripcion(textos.mensajeError);
       return;
     }

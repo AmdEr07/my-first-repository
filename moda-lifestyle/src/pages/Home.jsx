@@ -11,7 +11,7 @@ import Navbar from "../components/Navbar";
 import { servicioBlog } from "../services/api";
 import ArticleCard from "../components/ArticleCard";
 
-export default function Home({ usuarioConectado, setUsuarioConectado }) {
+export default function Home() {
   // Estado para saber el idioma actual de la web.
   const [idioma, setIdioma] = useState("es");
 
@@ -117,8 +117,7 @@ export default function Home({ usuarioConectado, setUsuarioConectado }) {
         idioma={idioma}
         setIdioma={setIdioma}
         categoriaActiva={categoriaActual}
-        usuarioConectado={usuarioConectado}
-        setUsuarioConectado={setUsuarioConectado}
+
       />
 
       <main className="magazine-layout">

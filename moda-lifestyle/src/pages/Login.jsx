@@ -4,13 +4,17 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-export default function Login({ setUsuarioConectado }) {
+export default function Login() {
   // Estado donde guardamos lo que escribe el usuario en el input.
   const [claveAcceso, setClaveAcceso] = useState("");
 
   // Estado para mostrar un pequeño mensaje si el usuario intenta entrar sin escribir nada.
   const [mensaje, setMensaje] = useState("");
+
+  // Sacamos del contexto la función que inicia sesión.
+  const { iniciarSesion: iniciarSesionContexto } = useAuth();
 
   // Hook para redirigir al usuario al panel admin.
   const navegar = useNavigate();
@@ -22,11 +26,8 @@ export default function Login({ setUsuarioConectado }) {
 
     // Si el usuario ha escrito algo, lo consideramos válido.
     if (claveAcceso.trim()) {
-      // Marcamos que el administrador está conectado.
-      setUsuarioConectado(true);
-
-      // Guardamos la clave en localStorage para mantener la sesión.
-      localStorage.setItem("api_key", claveAcceso.trim());
+      // Usamos el contexto para guardar la clave y marcar la sesión como iniciada.
+      iniciarSesionContexto(claveAcceso.trim());
 
       // Redirigimos al panel de administración.
       navegar("/admin");
